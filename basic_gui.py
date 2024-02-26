@@ -1,0 +1,48 @@
+import tkinter as tk
+from tkinter import ttk
+win=tk.Tk()
+menu=tk.Menu(win)
+win.title("basic gui")
+# file menu
+file_menu=tk.Menu(menu,tearoff=False)
+file_menu.add_command(label="open_file")
+file_menu.add_command(label="Save")
+file_menu.add_command(label="Save as")
+file_menu.add_command(label="Share")
+file_menu.add_command(label="Auto Save")
+# edit menu
+edit_menu=tk.Menu(menu,tearoff=False)
+edit_menu.add_command(label="Undo")
+edit_menu.add_command(label="Redo")
+edit_menu.add_command(label="Cut")
+edit_menu.add_command(label="Copy")
+edit_menu.add_command(label="Paste")
+# Selection
+View=tk.Menu(menu,tearoff=False)
+View.add_command(label="Problem")
+View.add_command(label="Output")
+View.add_command(label="Debug Console")
+View.add_command(label="Run")
+View.add_command(label="Extensions")
+# Run
+run=tk.Menu(menu,tearoff=False)
+run.add_command(label="Start Debugging")
+run.add_command(label="Open Configuration")
+run.add_command(label="Add Configuration")
+run.add_command(label="Enable All Breakpoints")
+run.add_command(label="Disable All Breakpoints")
+# terminal
+terminal=tk.Menu(menu,tearoff=False)
+terminal.add_command(label="New Terminal")
+terminal.add_command(label="Run Without Debugging")
+terminal.add_command(label="Run Build Task")
+terminal.add_command(label="Configure Tasks")
+terminal.add_command(label="Configure Tasks")
+# cascade
+menu.add_cascade(menu=file_menu,label="file")
+menu.add_cascade(menu=edit_menu,label="Edit")
+menu.add_cascade(menu=View,label="View")
+menu.add_cascade(menu=run,label="run")
+menu.add_cascade(menu=terminal,label="terminal")
+win.config(menu=menu)
+win.mainloop()
